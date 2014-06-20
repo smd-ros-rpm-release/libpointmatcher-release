@@ -1,0 +1,12 @@
+Source: ros-hydro-libpointmatcher
+Section: misc
+Priority: extra
+Maintainer: Francois Pomerleau <f.pomerleau@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), cmake, libboost-all-dev, libeigen3-dev, ros-hydro-libnabo, yaml-cpp
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-hydro-libpointmatcher
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libeigen3-dev, ros-hydro-catkin, ros-hydro-libnabo, yaml-cpp
+Description: libpointmatcher is a modular ICP library, useful for robotics and computer vision.
