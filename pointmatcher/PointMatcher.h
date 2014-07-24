@@ -68,9 +68,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 //! version of the Pointmatcher library as string
-#define POINTMATCHER_VERSION "1.1.0"
+#define POINTMATCHER_VERSION "1.2.1"
 //! version of the Pointmatcher library as an int
-#define POINTMATCHER_VERSION_INT 10100
+#define POINTMATCHER_VERSION_INT 10201
 
 //! Functions and classes that are not dependant on scalar type are defined in this namespace
 namespace PointMatcherSupport
@@ -597,18 +597,16 @@ struct PointMatcher
 		
 		void cleanup();
 		
-		#ifdef HAVE_YAML_CPP
-		virtual void loadAdditionalYAMLContent(YAML::Node& doc);
+        virtual void loadAdditionalYAMLContent(YAML::Node& doc);
 		
 		template<typename R>
-		const std::string& createModulesFromRegistrar(const std::string& regName, const YAML::Node& doc, const R& registrar, PointMatcherSupport::SharedPtrVector<typename R::TargetType>& modules);
+        const std::string& createModulesFromRegistrar(const std::string& regName, const YAML::Node& doc, const R& registrar, PointMatcherSupport::SharedPtrVector<typename R::TargetType>& modules);
 		
 		template<typename R>
-		const std::string& createModuleFromRegistrar(const std::string& regName, const YAML::Node& doc, const R& registrar, boost::shared_ptr<typename R::TargetType>& module);
+        const std::string& createModuleFromRegistrar(const std::string& regName, const YAML::Node& doc, const R& registrar, boost::shared_ptr<typename R::TargetType>& module);
 		
 		/*template<typename R>
 		typename R::TargetType* createModuleFromRegistrar(const YAML::Node& module, const R& registrar);*/
-		#endif // HAVE_YAML_CPP
 	};
 	
 	//! ICP algorithm
